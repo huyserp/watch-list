@@ -1,0 +1,7 @@
+<h1>Movie Lists!</h1>
+<p>What's important to you?</p>
+<% @lists.each do |list| %>
+  <h3><%= link_to list.name, list_path(list) %></h3>
+<% end %>
+
+<%= render 'form', list: @list %>

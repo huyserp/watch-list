@@ -1,0 +1,18 @@
+<h1><%= @list.name %></h1>
+<h6>Includes...</h6>
+<div>
+  <% @list.bookmarks.each do |bookmark| %>
+    <%= image_tag "#{bookmark.movie.poster_url}", alt: "#{bookmark.movie.title}" %>
+    <p><%= bookmark.movie.title %></p>
+    <p><%= bookmark.movie.overview %></p>
+    <p><%= bookmark.comment%></p>
+  <% end %>
+</div>
+
+
+
+<h4>add a movie</h4>
+
+<%= render './bookmarks/form' %>
+
+<%= link_to "back to lists", lists_path %>
